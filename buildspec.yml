@@ -16,6 +16,6 @@ phases:
     commands:
       - echo "Post build phase completed."
 
-artifacts:
+ artifacts:
   files:
     - /var/www/html/index.html
