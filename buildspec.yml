@@ -13,7 +13,6 @@ phases:
  post_build:
  commands:
  - echo Configuration NGNIX 
-
  artifacts:
  files:
  -
