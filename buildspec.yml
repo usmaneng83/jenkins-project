@@ -16,7 +16,6 @@ phases:
     commands:
       - echo "Configuring NGINX"
       - sudo systemctl restart nginx
-
 artifacts:
   files:
     - /var/www/html/index.html
