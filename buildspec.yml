@@ -1,19 +1,22 @@
-vversion: 0.2
+version: 0.2
 
 phases:
   install:
     commands:
-      - echo Installing NGINX
+      - echo "Installing NGINX"
       - sudo apt-get update
       - sudo apt-get install nginx -y  # Corrected 'ngnix' to 'nginx'
+
   build:
     commands:
-      - echo Build started on `date`
+      - echo "Build started on `date`"
       - sudo cp index.html /var/www/html/  # Ensure the cp command runs with sudo since you are copying to a system directory
+
   post_build:
     commands:
-      - echo Configuring NGINX
+      - echo "Configuring NGINX"
       - sudo systemctl restart nginx  # Ensures NGINX is restarted after configuration
+
 artifacts:
   files:
     - /var/www/html/index.html
