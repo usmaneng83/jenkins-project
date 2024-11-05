@@ -3,9 +3,10 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing NGINX"
+      - echo "Installing dependencies"
       - sudo apt-get update
       - sudo apt-get install nginx -y
+
   build:
     commands:
       - echo "Build started on `date`"
@@ -13,7 +14,8 @@ phases:
 
   post_build:
     commands:
-      - echo "Post build phase completed"
-  artifacts:
+      - echo "Post build phase completed."
+
+artifacts:
   files:
-    - /var/www/html/index.html
+    - /var/www/html/index.html  # The file to be included as an artifact
