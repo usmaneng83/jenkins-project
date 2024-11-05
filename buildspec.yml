@@ -10,13 +10,12 @@ phases:
   build:
     commands:
       - echo "Build started on `date`"
-      - sudo cp index.html /var/www/html/  # Ensure the file is copied to the correct location
+      - sudo cp index.html /var/www/html/
 
   post_build:
     commands:
-      - echo "Post build: Restarting NGINX service"
-      - sudo systemctl restart nginx  # Example command to restart NGINX
+      - echo "Post build phase completed."
 
 artifacts:
   files:
-    - /var/www/html/index.html  # Correct artifact path to be saved after the build
+    - /var/www/html/index.html
