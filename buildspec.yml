@@ -1,19 +1,19 @@
-version: 0.2
+vversion: 0.2
 
 phases:
- install:
- commands:
- - echo Installing NGINX  
- - sudo apt-get update
- - sudo apt-get install ngnix -y
- build:
- commands:
- - echo build started on 'date'
- - cp index.html /var/www/html/
- post_build:
- commands:
- - echo Configuration NGNIX 
- artifacts:
- files:
- -
- - /var/www/html/index.html
+  install:
+    commands:
+      - echo Installing NGINX
+      - sudo apt-get update
+      - sudo apt-get install nginx -y  # Corrected 'ngnix' to 'nginx'
+  build:
+    commands:
+      - echo Build started on `date`
+      - sudo cp index.html /var/www/html/  # Ensure the cp command runs with sudo since you are copying to a system directory
+  post_build:
+    commands:
+      - echo Configuring NGINX
+      - sudo systemctl restart nginx  # Ensures NGINX is restarted after configuration
+artifacts:
+  files:
+    - /var/www/html/index.html
