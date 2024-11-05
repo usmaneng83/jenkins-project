@@ -9,7 +9,7 @@ phases:
 
   build:
     commands:
-      - echo "Build started on `date`"
+      - echo Build started on `date`
       - sudo cp index.html /var/www/html/  # Ensure the file exists before referencing it
 
   post_build:
