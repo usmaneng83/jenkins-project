@@ -8,7 +8,7 @@ phases:
       - sudo apt-get install nginx -y  # Corrected 'ngnix' to 'nginx'
   build:
     commands:
-      - echo "Build started on `date`"
+      - echo Build started on `date`
       - sudo cp index.html /var/www/html/  # Ensure the cp command runs with sudo since you are copying to a system directory
   post_build:
     commands:
