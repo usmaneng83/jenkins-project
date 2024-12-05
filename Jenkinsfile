@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'clone the repo'
                 sh 'rm -fr html'
-                sh 'git clone https://github.com/dmccuk/html.git'
+                sh 'git clone https://github.com/jenkins-project/html.git'
             }
         }
         stage('push repo to remote host') {
