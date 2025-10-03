@@ -1,23 +1,22 @@
 pipeline {
-    agent any 
+    agent any
+
     stages {
-        stage('Clone the repo') {
+        stage('Build') {
             steps {
-                echo 'clone the repo'
-                sh 'rm -fr html'
-                sh 'git clone https://github.com/jenkins-project/html.git'
+                echo 'Building the project...'
             }
         }
-        stage('push repo to remote host') {
+
+        stage('Test') {
             steps {
-                echo 'connect to remote host and pull down the latest version'
-                sh 'ssh -i ~/jenkins.pem usman@usman-virtual-machine@192.168.255.129/ sudo git -C /var/www/html pull'
+                echo 'Running tests...'
             }
         }
-        stage('Check website is up') {
+
+        stage('Deploy') {
             steps {
-                echo 'Check website is up'
-                sh 'curl -Is 192.168.255.129 | head -n 1'
+                echo 'Deploying application...'
             }
         }
     }
